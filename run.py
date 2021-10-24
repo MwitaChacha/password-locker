@@ -29,4 +29,7 @@ def login_user(username, password):
     """
     A function that verifies a user login
     """
-    che    
+    check_user = User.verify_login(username, password)
+    return check_user
+
+    
