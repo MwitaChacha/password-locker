@@ -37,4 +37,7 @@ class Credentials:
         """
         A method that finds and returns credentials
         """
+        for credential in cls.credentials_list:
+            credential.account_name == account_name
+            return credential
                 

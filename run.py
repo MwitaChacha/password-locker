@@ -157,9 +157,9 @@ def main():
                   print("\n")
                   print("The following are your available passwords in your account: ")
                   for cred in display_credentials():
-                      print("\n")
-                      print(f"Account name: {cred.account_name}  Account Password: {cred.account_password}")
                       
+                      print(f"Account name: {cred.account_name}  Account Password: {cred.account_password}")
+                      print("\n")
                 else: print("You do not seem to have any save passwords")
                 
             elif short_code == "cc":
@@ -175,10 +175,9 @@ def main():
             elif short_code == "del":
                 print("Enter the account name you want to delete below, e.g Twitter")
                 search_account = input()
-                search_account = get_credentials(account_name, account_password)
+                search_account = get_credentials(account_name)
                 print(f"Your account for {search_account.account_name} has been deleted successfully!")
-                
-            elif short_code == "ex":
+                search_account(delete_credentials)
                 
                 print("Thank you for using Password Locker!")
                 print("BYE")
