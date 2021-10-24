@@ -177,6 +177,7 @@ def main():
                 search_account = input()
                 search_account = get_credentials(account_name)
                 delete_credentials(get_credentials(account_name))
+                print("\n")
                 print(f"Your account for {search_account.account_name} has been deleted successfully!")
                 
            
