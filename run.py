@@ -38,4 +38,11 @@ def create_cred(account_name, account_password):
     """
     new_cred = Credentials(account_name, account_password)
     return new_cred   
+
+def save_credentials(cred): 
+    """
+    A function that saves a credential
+    """
+    cred.save_credentials()
     
+       
