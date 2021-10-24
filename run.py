@@ -55,4 +55,10 @@ def get_credentials(account_name):
     """
     A function that finds and returns a credential
     """
-    return Credentials.get_credentials(account_name)           
+    return Credentials.get_credentials(account_name)
+
+def display_credentials():
+    """
+    A function that displays available credentials
+    """
+    return Credentials.display_credentials()             
