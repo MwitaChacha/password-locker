@@ -18,4 +18,10 @@ class User:
         A method that saves a new User instance
         """
         User.user_list.append(self)
-        
+    
+    def delete_user(self):
+        """
+        A method that delete an instance of User
+        """
+        User.user_list.remove(self)
+             
