@@ -176,13 +176,14 @@ def main():
                 print("Enter the account name you want to delete below, e.g Twitter")
                 search_account = input()
                 search_account = get_credentials(account_name)
+                delete_credentials(get_credentials(account_name))
                 print(f"Your account for {search_account.account_name} has been deleted successfully!")
                 
            
             elif short_code == "ex":    
                 print("Thank you for using Password Locker!")
                 print("BYE")
-                break        
+            break        
                     
 if __name__ == "__main__":
     main()                    
