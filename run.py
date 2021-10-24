@@ -51,4 +51,8 @@ def delete_credentials(cred):
     """
     cred.delete_credentials()
     
-           
+def get_credentials(account_name):
+    """
+    A function that finds and returns a credential
+    """
+    return Credentials.get_credentials(account_name)           
