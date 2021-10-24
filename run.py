@@ -45,4 +45,10 @@ def save_credentials(cred):
     """
     cred.save_credentials()
     
-       
+def delete_credentials(cred):
+    """
+    A function that deletes a credential
+    """
+    cred.delete_credentials()
+    
+           
