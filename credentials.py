@@ -30,4 +30,11 @@ class Credentials:
         """
         A method that displays the available credentials
         """
-        return cls.credentials_list             
+        return cls.credentials_list     
+    
+    @classmethod
+    def get_credentials(cls, account_name):
+        """
+        A method that finds and returns credentials
+        """
+                
