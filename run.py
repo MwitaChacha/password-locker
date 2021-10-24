@@ -32,7 +32,7 @@ def login_user(username, password):
     check_user = User.verify_login(username, password)
     return check_user
 
-def create_cred(account_name, account_password):
+def create_credentials(account_name, account_password):
     """
     A function that creates a new credential
     """
@@ -64,6 +64,7 @@ def display_credentials():
     return Credentials.display_credentials()   
 
 def main():
+    print("\n")
     print("Hi :) Welcome to Password Locker.")
     print("\n")
     print("Use the following short codes to navigate through the application.")
@@ -90,7 +91,7 @@ def main():
                 confirmed_password = input()
                 
             else:
-                print(f"Congratulations {username}! You have successfully created a Passwor Locker account.")
+                print(f"Congratulations {username}! You have successfully created a Password Locker account.")
                 print("\n")
                 print("Enter your login details to continue...")
                 print("Enter usernme")
@@ -107,6 +108,7 @@ def main():
                 
             else:
                 print(f"Welcome {username} to your Password Locker account. Your password is {password}.")
+                print("\n")
                 print("You can be able to interact with your passwords here.")       
         
         elif short_code == "lg":
@@ -119,6 +121,7 @@ def main():
             login = login_user(username, password)
             
             if login_user == login:
+                print("\n")
                 print(f"Welcome {username} to your Password Locker account. Your password is {password}.")
                 print("You can be able to interact with your passwords here.")       
             else:
@@ -135,7 +138,7 @@ def main():
             print("del - To delete your passwords")
             print("cc - To make Password Locker generate you a password for any of your accounts")
             print("ex - To exit")
-            short_code = input("Enter your short coe here: ")
+            short_code = input("Enter your short code here: ")
             
             if short_code == "ad":
                 print("Enter your the account whose password you want to store, e.g Snapchat" )
@@ -143,14 +146,18 @@ def main():
                 account_name = input()
                 print("Enter the password for the account you have just entered ")
                 account_password = input()
-                print("You have successfully added a passwor to your account!")
-                print("Account: {account_name}  Password: {account_password}")
-                save_credentials(create_cred(account_name, account_password))
+                print("\n")
+                print("You have successfully added a password to your account!")
+                print(f"Account: {account_name}  Password: {account_password}")
+                print("\n")
+                save_credentials(create_credentials(account_name, account_password))
                 
             elif short_code == "vw":
                 if display_credentials():
+                  print("\n")
                   print("The following are your available passwords in your account: ")
                   for cred in display_credentials():
+                      print("\n")
                       print(f"Account name: {cred.account_name}  Account Password: {cred.account_password}")
                       
                 else: print("You do not seem to have any save passwords")
@@ -159,15 +166,23 @@ def main():
                 print("Thank you for choosing us to help you generate your password.")
                 print("To begin, enter the account you wish to have a password, e.g Twitter.")
                 account_name = input()
-                account_password = random.randit(1000, 9999)
+                account_password = random.randint(1000, 9999)
                 print("\n")
                 print(f"Your generated password is {account_password}")
-                save_credentials(create_cred(account_name, account_password))        
+                save_credentials(create_credentials(account_name, account_password)) 
+                print("\n")       
             
             elif short_code == "del":
                 print("Enter the account name you want to delete below, e.g Twitter")
                 search_account = input()
                 search_account = get_credentials(account_name, account_password)
                 print(f"Your account for {search_account.account_name} has been deleted successfully!")
+                
+            elif short_code == "ex":
+                
+                print("Thank you for using Password Locker!")
+                print("BYE")
+                break        
                     
-                    
+if __name__ == "__main__":
+    main()                    
