@@ -61,4 +61,52 @@ def display_credentials():
     """
     A function that displays available credentials
     """
-    return Credentials.display_credentials()             
+    return Credentials.display_credentials()   
+
+def main():
+    print("Hi :) Welcome to Password Locker.")
+    print("\n")
+    print("Use the following short codes to navigate through the application.")
+    print("na - To create a new account.")
+    print("lg - To log in to your account.")
+    short_code = input("Write your short code here: ")
+    print("\n") 
+             
+    while True:
+        if short_code == "na":
+            print("To create a new account, you will need a username and a password.")  
+            print("Write your username below:")
+            username = input()
+            print("Write your password below: ")
+            password = input()
+            save_user(create_user(username, password))
+            print("Can you please confirm your password below:") 
+            confirmed_password = input()
+            
+            while confirmed_password != password:
+                print("Please input the correct password to continue")
+                password = input()
+                print("Confirm your password")
+                confirmed_password = input()
+                
+            else:
+                print(f"Congratulations {username}! You have successfully created a Passwor Locker account.")
+                print("\n")
+                print("Enter your login details to continue...")
+                print("Enter usernme")
+                login_username = input()
+                print("Enter password")
+                login_password = input()
+                
+            while username != login_username or confirmed_password != login_password:
+                print("Invalid username or password. Please try again.")
+                print("Enter username")
+                login_username = input()
+                print("Enter password")
+                login_password = input()
+                
+            else:
+                print(f"Welcome {username} to your Password Locker account.")       
+                    
+                
+                    
