@@ -24,4 +24,11 @@ class User:
         A method that delete an instance of User
         """
         User.user_list.remove(self)
-             
+    
+    @classmethod
+    def display_name(cls):
+        """
+        A method that displays the available users in the list 
+        """
+    
+                 
