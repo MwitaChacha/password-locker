@@ -19,5 +19,14 @@ def save_user(user):
      """
     user.save_user()
     
-    
-    
+def delete_user(user):
+    """
+    A function that deletes a user
+    """
+    user.delete_user()
+        
+def login_user(username, password):
+    """
+    A function that verifies a user login
+    """
+    che    
