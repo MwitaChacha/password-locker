@@ -106,7 +106,31 @@ def main():
                 login_password = input()
                 
             else:
-                print(f"Welcome {username} to your Password Locker account.")       
+                print(f"Welcome {username} to your Password Locker account. Your password is {password}.")
+                print("You can be able to interact with your passwords here.")       
+        
+        elif short_code == "lg":
+            print("Welcome back to Password Locker!")
+            print("Enter your details for you to login in your account")
+            print("Enter your username")
+            username = input()
+            print("Enter your password")
+            password = input() 
+            login = login_user(username, password)
+            
+            if login_user == login:
+                print(f"Welcome {username} to your Password Locker account. Your password is {password}.")
+                print("You can be able to interact with your passwords here.")       
+            else:
+                print("Invalid username or password. Please try again or first create an account.")
+                print("Enter username")
+                username = input()
+                print("Enter password")
+                password = input()              
+        
+        while True:
+            print("Input the following short codes to perform various actions in your Password Locker account:")
+            
+        
                     
-                
                     
