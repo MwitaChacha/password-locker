@@ -30,5 +30,13 @@ class User:
         """
         A method that displays the available users in the list 
         """
+        return cls.user_list
     
-                 
+    @classmethod
+    def verify_login(cls, username, password):
+         """
+         A method that verifies a user login
+         """
+         for user in cls.user_list:
+             if user.username == username and user.password == password:
+                 return user               
