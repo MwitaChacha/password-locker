@@ -12,4 +12,9 @@ class Credentials:
         """
         self.account_name = account_name
         self.account_password = account_password
-        
+    
+    def save_credentials(self):
+        """
+        A method that saves new instances of the Credentials class
+        """
+        Credentials.credentials_list.append(self)    
